@@ -8,7 +8,7 @@
 #jqt .in{z-index:10}
 #jqt .out{z-index:0!important}
 #jqt.supports3d{-webkit-perspective:1000}
-#jqt.supports3d>*{-webkit-transform:translate3d(0,0,0) rotate(0) scale(1)}
+#jqt.supports3d>[data-ui=view]{-webkit-transform:translate3d(0,0,0) rotate(0) scale(1)}
 #jqt .fade.in{-webkit-animation-name:fadeIn}
 #jqt .fade.out{z-index:10;-webkit-animation-name:fadeOut}
 @-webkit-keyframes fadeIn{

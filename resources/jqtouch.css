@@ -12,7 +12,7 @@ body{-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}
 #jqt a{-webkit-tap-highlight-color:transparent;-webkit-user-drag:none}
 #jqt .selectable,#jqt input,#jqt textarea{-webkit-user-select:auto}
 #jqt.notransform{-webkit-transform:none!important}
-#jqt>*{left:0;top:0;min-height:100%;width:100%;overflow-x:hidden;position:absolute;z-index:0;display:-webkit-box;display:box;-webkit-box-orient:vertical;box-orient:vertical}
+#jqt>[data-ui=view]{left:0;top:0;min-height:100%;width:100%;overflow-x:hidden;position:absolute;z-index:0;display:-webkit-box;display:box;-webkit-box-orient:vertical;box-orient:vertical}
 #jqt>.current{z-index:10}
 #jqt>:not(.current):not(.in):not(.out){display:none}
 #jqt.autoscroll:not(.animating3d),#jqt.touchscroll:not(.animating3d){overflow-y:auto;-webkit-overflow-scrolling:touch}
@@ -22,10 +22,8 @@ body{-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}
 #jqt .scroll{-webkit-margin-collapse:separate}
 
 
-
-#jqt .toolbar{-webkit-box-sizing:border-box;box-sizing:border-box;z-index:10;position:relative;padding:10px;height:44px;}
+#jqt .toolbar{-webkit-box-sizing:border-box;box-sizing:border-box;z-index:10;position:relative;z-index:1;padding:10px;height:44px;}
 #jqt .toolbar>h1{position:absolute;overflow:hidden;left:50%;bottom:9px;margin:1px 0 0 -75px;width:150px;font-size:20px;font-weight:700;line-height:1.3em;text-align:center;text-overflow:ellipsis;white-space:nowrap;}
-
 
 #jqt.black-translucent .toolbar{padding-top:30px;height:64px}
 #jqt.landscape .toolbar>h1{margin-left:-125px;width:250px}
@@ -36,8 +34,12 @@ body{-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}
 
 /* UI Theme */
 body{background:#000}
-#jqt>*{background-color:#eee}
-#jqt .toolbar{background-color:#fff;border-bottom:1px solid #000;}
-#jqt .toolbar>h1{color:#333;text-shadow:#161717 0 -1px 0}
-#jqt .add,#jqt .back,#jqt .button,#jqt .cancel{background-color:#ccc;color:#333;text-shadow:#000 0 -1px 0;border:1px solid #aaa;}
-#jqt .add.active,#jqt .back.active,#jqt .button.active,#jqt .cancel.active{border-color:#000;background-color:#000;color:#d8d9d9;text-shadow:#000 0 -1px 0}
+#jqt>[data-ui=view]{background-color:#eee;color:rgba(0,0,0,.87);}
+#jqt .toolbar{background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.13);}
+#jqt .toolbar>h1{color:rgba(0,0,0,.87);}
+#jqt .add,#jqt .back,#jqt .button,#jqt .cancel{background-color:rgba(0,0,0,.16);color:rgba(0,0,0,.87);border:1px solid rgba(0,0,0,.24);}
+#jqt .add.active,#jqt .back.active,#jqt .button.active,#jqt .cancel.active{border-color:#000;background-color:#000;color:#fff;}
+
+.scroll{padding:0 16px;}
+#jqt ul{list-style:none;padding:0 0 16px;}
+#jqt ul li{padding:8px 0;}
