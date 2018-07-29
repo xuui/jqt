@@ -5,577 +5,190 @@ jQTouch may be freely distributed under the MIT license.
 @charset "UTF-8";
 /*! normalize.css 2011-07-12T10:51 UTC · http://github.com/necolas/normalize.css */
 
-*{
-margin:0;
-padding:0
-}
-body{
--webkit-tap-highlight-color:transparent;
--webkit-touch-callout:none
-}
-#jqt{
--webkit-text-size-adjust:none;
--webkit-user-select:none;
-user-select:none;
-font-family:"Avenir Next",Avenir;
-position:absolute;
-right:0;
-top:0;
-left:0;
-bottom:0
-}
-#jqt a{
--webkit-tap-highlight-color:transparent;
--webkit-user-drag:none
-}
-#jqt .selectable,#jqt input,#jqt textarea{
--webkit-user-select:auto
-}
-#jqt.notransform{
--webkit-transform:none!important
-}
-#jqt>*{
-left:0;
-top:0;
-min-height:100%;
-width:100%;
-overflow-x:hidden;
-position:absolute;
-z-index:0;
-display:-webkit-box;
-display:box;
--webkit-box-orient:vertical;
-box-orient:vertical
-}
-#jqt>.current{
-z-index:10
-}
-#jqt>:not(.current):not(.in):not(.out){
-display:none
-}
-#jqt.autoscroll:not(.animating3d),#jqt.touchscroll:not(.animating3d){
-overflow-y:auto;
--webkit-overflow-scrolling:touch
-}
-#jqt.autoscroll:not(.animating3d)>*,#jqt.touchscroll:not(.animating3d)>*{
-height:100%
-}
-#jqt.autoscroll:not(.animating3d) .scroll,#jqt.touchscroll:not(.animating3d) .scroll{
-position:relative;
--webkit-box-flex:1;
-box-flex:1;
-overflow-y:auto;
--webkit-overflow-scrolling:touch
-}
-#jqt.touchscroll:not(.animating3d) .scroll{
-overflow-y:auto;
-}
-#jqt .scroll{
--webkit-margin-collapse:separate
-}
-#jqt .in,#jqt .out{
--webkit-animation-duration:375ms;
--webkit-animation-fill-mode:both;
--webkit-animation-timing-function:ease-in-out
-}
-#jqt .in:after,#jqt .out:after{
-content:"";
-position:absolute;
-display:block;
-top:0;
-left:0;
-bottom:0;
-right:0
-}
-#jqt .in a,#jqt .in input,#jqt .out a,#jqt .out input{
-pointer-events:none
-}
-#jqt .in{
-z-index:10
-}
-#jqt .out{
-z-index:0!important
-}
-#jqt.supports3d{
--webkit-perspective:1000
-}
-#jqt.supports3d>*{
--webkit-transform:translate3d(0,0,0) rotate(0) scale(1)
-}
-#jqt .fade.in{
--webkit-animation-name:fadeIn
-}
-#jqt .fade.out{
-z-index:10;
--webkit-animation-name:fadeOut
-}
+*{margin:0;padding:0}
+body{-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}
+#jqt{-webkit-text-size-adjust:none;-webkit-user-select:none;user-select:none;font-family:"Avenir Next",Avenir;position:absolute;right:0;top:0;left:0;bottom:0}
+#jqt a{-webkit-tap-highlight-color:transparent;-webkit-user-drag:none}
+#jqt .selectable,#jqt input,#jqt textarea{-webkit-user-select:auto}
+#jqt.notransform{-webkit-transform:none!important}
+#jqt>*{left:0;top:0;min-height:100%;width:100%;overflow-x:hidden;position:absolute;z-index:0;display:-webkit-box;display:box;-webkit-box-orient:vertical;box-orient:vertical}
+#jqt>.current{z-index:10}
+#jqt>:not(.current):not(.in):not(.out){display:none}
+#jqt.autoscroll:not(.animating3d),#jqt.touchscroll:not(.animating3d){overflow-y:auto;-webkit-overflow-scrolling:touch}
+#jqt.autoscroll:not(.animating3d)>*,#jqt.touchscroll:not(.animating3d)>*{height:100%}
+#jqt.autoscroll:not(.animating3d) .scroll,#jqt.touchscroll:not(.animating3d) .scroll{position:relative;-webkit-box-flex:1;box-flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
+#jqt.touchscroll:not(.animating3d) .scroll{overflow-y:auto;}
+#jqt .scroll{-webkit-margin-collapse:separate}
+
+/* Animation */
+#jqt .in,#jqt .out{-webkit-animation-duration:375ms;-webkit-animation-fill-mode:both;-webkit-animation-timing-function:ease-in-out}
+#jqt .in:after,#jqt .out:after{content:"";position:absolute;display:block;top:0;left:0;bottom:0;right:0}
+#jqt .in a,#jqt .in input,#jqt .out a,#jqt .out input{pointer-events:none}
+#jqt .in{z-index:10}
+#jqt .out{z-index:0!important}
+#jqt.supports3d{-webkit-perspective:1000}
+#jqt.supports3d>*{-webkit-transform:translate3d(0,0,0) rotate(0) scale(1)}
+#jqt .fade.in{-webkit-animation-name:fadeIn}
+#jqt .fade.out{z-index:10;-webkit-animation-name:fadeOut}
 @-webkit-keyframes fadeIn{
-0%{
-opacity:0
-}
-100%{
-opacity:1
-}
+0%{opacity:0}
+100%{opacity:1}
 }
 @-webkit-keyframes fadeOut{
-0%,100%{
-opacity:1
+0%,100%{opacity:1}
 }
-}
-#jqt .dissolve.in{
--webkit-animation-name:dissolveIn
-}
-#jqt .dissolve.out{
--webkit-animation-name:dissolveOut
-}
+#jqt .dissolve.in{-webkit-animation-name:dissolveIn}
+#jqt .dissolve.out{-webkit-animation-name:dissolveOut}
 @-webkit-keyframes dissolveIn{
-0%,5%{
-opacity:0
-}
-100%{
-opacity:1
-}
+0%,5%{opacity:0}
+100%{opacity:1}
 }
 @-webkit-keyframes dissolveOut{
-5%{
-opacity:1
+5%{opacity:1}
+100%{opacity:0}
 }
-100%{
-opacity:0
-}
-}
-#jqt .pop.in{
--webkit-animation-name:popIn
-}
-#jqt .pop.out{
--webkit-animation-name:popOut
-}
+#jqt .pop.in{-webkit-animation-name:popIn}
+#jqt .pop.out{-webkit-animation-name:popOut}
 @-webkit-keyframes popIn{
-0%{
-opacity:0
-}
-5%{
--webkit-transform:scale(0.2);
-opacity:0
-}
-100%{
--webkit-transform:scale(1);
-opacity:1
-}
+0%{opacity:0}
+5%{-webkit-transform:scale(0.2);opacity:0}
+100%{-webkit-transform:scale(1);opacity:1}
 }
 @-webkit-keyframes popOut{
-5%{
--webkit-transform:scale(1);
-opacity:1
+5%{-webkit-transform:scale(1);opacity:1}
+100%{-webkit-transform:scale(0.2);opacity:0}
 }
-100%{
--webkit-transform:scale(0.2);
-opacity:0
-}
-}
-#jqt .slideleft.in{
--webkit-animation-name:slideLeftIn
-}
-#jqt .slideleft.out{
--webkit-animation-name:slideLeftOut
-}
+#jqt .slideleft.in{-webkit-animation-name:slideLeftIn}
+#jqt .slideleft.out{-webkit-animation-name:slideLeftOut}
 @-webkit-keyframes slideLeftIn{
-0%{
--webkit-transform:translateX(90%)
-}
-100%{
--webkit-transform:translateX(0)
-}
+0%{-webkit-transform:translateX(90%)}
+100%{-webkit-transform:translateX(0)}
 }
 @-webkit-keyframes slideLeftOut{
-0%{
--webkit-transform:translateX(-10%)
+0%{-webkit-transform:translateX(-10%)}
+100%{-webkit-transform:translateX(-100%)}
 }
-100%{
--webkit-transform:translateX(-100%)
-}
-}
-#jqt .slideright.in{
--webkit-animation-name:slideRightIn
-}
-#jqt .slideright.out{
--webkit-animation-name:slideRightOut
-}
+#jqt .slideright.in{-webkit-animation-name:slideRightIn}
+#jqt .slideright.out{-webkit-animation-name:slideRightOut}
 @-webkit-keyframes slideRightIn{
-0%{
--webkit-transform:translateX(-90%)
-}
-100%{
--webkit-transform:translateX(0)
-}
+0%{-webkit-transform:translateX(-90%)}
+100%{-webkit-transform:translateX(0)}
 }
 @-webkit-keyframes slideRightOut{
-0%{
--webkit-transform:translateX(10%)
+0%{-webkit-transform:translateX(10%)}
+100%{-webkit-transform:translateX(100%)}
 }
-100%{
--webkit-transform:translateX(100%)
-}
-}
-#jqt .slideup.in{
--webkit-animation-name:slideUpIn
-}
-#jqt .slideup.out{
--webkit-animation-name:slideUpOut
-}
+#jqt .slideup.in{-webkit-animation-name:slideUpIn}
+#jqt .slideup.out{-webkit-animation-name:slideUpOut}
 @-webkit-keyframes slideUpIn{
-20%{
--webkit-transform:translateY(80%)
-}
-100%{
--webkit-transform:translateY(0%)
-}
+20%{-webkit-transform:translateY(80%)}
+100%{-webkit-transform:translateY(0%)}
 }
 @-webkit-keyframes slideUpOut{
-20%{
--webkit-transform:translateY(-20%)
+20%{-webkit-transform:translateY(-20%)}
+100%{-webkit-transform:translateY(-100%)}
 }
-100%{
--webkit-transform:translateY(-100%)
-}
-}
-#jqt .slidedown.in{
--webkit-animation-name:slideDownIn
-}
-#jqt .slidedown.out{
--webkit-animation-name:slideDownOut
-}
+#jqt .slidedown.in{-webkit-animation-name:slideDownIn}
+#jqt .slidedown.out{-webkit-animation-name:slideDownOut}
 @-webkit-keyframes slideDownIn{
-0%{
--webkit-transform:translateY(-80%)
-}
-100%{
--webkit-transform:translateY(0%)
-}
+0%{-webkit-transform:translateY(-80%)}
+100%{-webkit-transform:translateY(0%)}
 }
 @-webkit-keyframes slideDownOut{
-0%{
--webkit-transform:translateY(20%)
+0%{-webkit-transform:translateY(20%)}
+100%{-webkit-transform:translateY(100%)}
 }
-100%{
--webkit-transform:translateY(100%)
-}
-}
-#jqt .slidedown,#jqt .slideleft,#jqt .slideright,#jqt .slideup{
--webkit-animation-timing-function:ease-in-out
-}
-#jqt .flipleft{
--webkit-backface-visibility:hidden
-}
-#jqt .flipleft.in{
--webkit-animation-name:flipLeftIn
-}
-#jqt .flipleft.out{
--webkit-animation-name:flipLeftOut
-}
+#jqt .slidedown,#jqt .slideleft,#jqt .slideright,#jqt .slideup{-webkit-animation-timing-function:ease-in-out}
+#jqt .flipleft{-webkit-backface-visibility:hidden}
+#jqt .flipleft.in{-webkit-animation-name:flipLeftIn}
+#jqt .flipleft.out{-webkit-animation-name:flipLeftOut}
 @-webkit-keyframes flipLeftIn{
-0%{
-opacity:0
+0%{opacity:0}
+5%{opacity:1;-webkit-transform:rotateY(180deg) scale(0.8)}
+100%{-webkit-transform:rotateY(0deg) scale(1)}
 }
-5%{
-opacity:1;
--webkit-transform:rotateY(180deg) scale(0.8)
+@-webkit-keyframes flipLeftOut{5%{-webkit-transform:rotateY(0deg) scale(1)}
+100%{-webkit-transform:rotateY(-180deg) scale(0.8)}
 }
-100%{
--webkit-transform:rotateY(0deg) scale(1)
-}
-}
-@-webkit-keyframes flipLeftOut{
-5%{
--webkit-transform:rotateY(0deg) scale(1)
-}
-100%{
--webkit-transform:rotateY(-180deg) scale(0.8)
-}
-}
-#jqt .flipright{
--webkit-backface-visibility:hidden
-}
-#jqt .flipright.in{
--webkit-animation-name:flipRightIn
-}
-#jqt .flipright.out{
--webkit-animation-name:flipRightOut
-}
+#jqt .flipright{-webkit-backface-visibility:hidden}
+#jqt .flipright.in{-webkit-animation-name:flipRightIn}
+#jqt .flipright.out{-webkit-animation-name:flipRightOut}
 @-webkit-keyframes flipRightIn{
-0%{
-opacity:0
-}
-5%{
--webkit-transform:rotateY(-180deg) scale(0.8)
-}
-100%{
--webkit-transform:rotateY(0deg) scale(1)
-}
+0%{opacity:0}
+5%{-webkit-transform:rotateY(-180deg) scale(0.8)}
+100%{-webkit-transform:rotateY(0deg) scale(1)}
 }
 @-webkit-keyframes flipRightOut{
-5%{
--webkit-transform:rotateY(0deg) scale(1)
+5%{-webkit-transform:rotateY(0deg) scale(1)}
+100%{-webkit-transform:rotateY(180deg) scale(0.8)}
 }
-100%{
--webkit-transform:rotateY(180deg) scale(0.8)
-}
-}
-#jqt .swapright{
--webkit-animation-duration:.7s;
--webkit-transform:perspective(800);
--webkit-animation-timing-function:ease-out
-}
-#jqt .swapright.in{
--webkit-animation-name:swapRightIn
-}
-#jqt .swapright.out{
--webkit-animation-name:swapRightOut
-}
+#jqt .swapright{-webkit-animation-duration:.7s;-webkit-transform:perspective(800);-webkit-animation-timing-function:ease-out}
+#jqt .swapright.in{-webkit-animation-name:swapRightIn}
+#jqt .swapright.out{-webkit-animation-name:swapRightOut}
 @-webkit-keyframes swapRightIn{
-0%{
-opacity:0
-}
-5%{
--webkit-transform:translate3d(0,0,-800px) rotateY(70deg);
-opacity:0
-}
-35%{
--webkit-transform:translate3d(-180px,0,-400px) rotateY(20deg);
-opacity:1
-}
-95%{
--webkit-transform:translate3d(0,0,0) rotateY(0deg);
-opacity:1
-}
+0%{opacity:0}
+5%{-webkit-transform:translate3d(0,0,-800px) rotateY(70deg);opacity:0}
+35%{-webkit-transform:translate3d(-180px,0,-400px) rotateY(20deg);opacity:1}
+95%{-webkit-transform:translate3d(0,0,0) rotateY(0deg);opacity:1}
 }
 @-webkit-keyframes swapRightOut{
-5%{
--webkit-transform:translate3d(0,0,0) rotateY(0deg);
-opacity:1
+5%{-webkit-transform:translate3d(0,0,0) rotateY(0deg);opacity:1}
+35%{-webkit-transform:translate3d(180px,0,-400px) rotateY(-20deg);opacity:.5}
+95%{-webkit-transform:translate3d(0,0,-800px) rotateY(-70deg);opacity:0}
 }
-35%{
--webkit-transform:translate3d(180px,0,-400px) rotateY(-20deg);
-opacity:.5
-}
-95%{
--webkit-transform:translate3d(0,0,-800px) rotateY(-70deg);
-opacity:0
-}
-}
-#jqt .swapleft{
--webkit-animation-duration:.7s;
--webkit-transform:perspective(800);
--webkit-animation-timing-function:ease-out
-}
-#jqt .swapleft.in{
--webkit-animation-name:swapLeftIn
-}
-#jqt .swapleft.out{
--webkit-animation-name:swapLeftOut
-}
+#jqt .swapleft{-webkit-animation-duration:.7s;-webkit-transform:perspective(800);-webkit-animation-timing-function:ease-out}
+#jqt .swapleft.in{-webkit-animation-name:swapLeftIn}
+#jqt .swapleft.out{-webkit-animation-name:swapLeftOut}
 @-webkit-keyframes swapLeftIn{
-0%{
-opacity:0
-}
-5%{
--webkit-transform:translate3d(0,0,-800px) rotateY(-70deg);
-opacity:0
-}
-35%{
--webkit-transform:translate3d(180px,0,-400px) rotateY(-20deg);
-opacity:1
-}
-95%{
-opacity:1;
--webkit-transform:translate3d(0,0,0) rotateY(0deg)
-}
+0%{opacity:0}
+5%{-webkit-transform:translate3d(0,0,-800px) rotateY(-70deg);opacity:0}
+35%{-webkit-transform:translate3d(180px,0,-400px) rotateY(-20deg);opacity:1}
+95%{opacity:1;-webkit-transform:translate3d(0,0,0) rotateY(0deg)}
 }
 @-webkit-keyframes swapLeftOut{
-5%{
--webkit-transform:translate3d(0,0,0) rotateY(0deg);
-opacity:1
+5%{-webkit-transform:translate3d(0,0,0) rotateY(0deg);opacity:1}
+35%{-webkit-transform:translate3d(-180px,0,-400px) rotateY(20deg);opacity:.5}
+95%{-webkit-transform:translate3d(0,0,-800px) rotateY(70deg);opacity:0}
 }
-35%{
--webkit-transform:translate3d(-180px,0,-400px) rotateY(20deg);
-opacity:.5
-}
-95%{
--webkit-transform:translate3d(0,0,-800px) rotateY(70deg);
-opacity:0
-}
-}
-#jqt .cubeleft.in,#jqt .cubeleft.out,#jqt .cuberight.in,#jqt .cuberight.out{
--webkit-animation-duration:.6s;
--webkit-transform:perspective(800)
-}
-#jqt .cubeleft.in{
--webkit-transform-origin:0 50%;
--webkit-animation-name:cubeLeftIn
-}
-#jqt .cubeleft.out{
--webkit-transform-origin:100% 50%;
--webkit-animation-name:cubeLeftOut
-}
+#jqt .cubeleft.in,#jqt .cubeleft.out,#jqt .cuberight.in,#jqt .cuberight.out{-webkit-animation-duration:.6s;-webkit-transform:perspective(800)}
+#jqt .cubeleft.in{-webkit-transform-origin:0 50%;-webkit-animation-name:cubeLeftIn}
+#jqt .cubeleft.out{-webkit-transform-origin:100% 50%;-webkit-animation-name:cubeLeftOut}
 @-webkit-keyframes cubeLeftIn{
-0%{
-opacity:0
-}
-5%{
--webkit-transform:rotateY(90deg) translateZ(360px);
-opacity:.5
-}
-95%{
--webkit-transform:rotateY(0deg) translateZ(0) translateX(0);
-opacity:1
-}
+0%{opacity:0}
+5%{-webkit-transform:rotateY(90deg) translateZ(360px);opacity:.5}
+95%{-webkit-transform:rotateY(0deg) translateZ(0) translateX(0);opacity:1}
 }
 @-webkit-keyframes cubeLeftOut{
-5%{
--webkit-transform:rotateY(0deg) translateZ(0) translateX(0);
-opacity:1
+5%{-webkit-transform:rotateY(0deg) translateZ(0) translateX(0);opacity:1}
+95%{-webkit-transform:rotateY(-90deg) translateZ(360px);opacity:.5}
 }
-95%{
--webkit-transform:rotateY(-90deg) translateZ(360px);
-opacity:.5
-}
-}
-#jqt .cuberight.in{
--webkit-transform-origin:100% 50%;
--webkit-animation-name:cubeRightIn
-}
-#jqt .cuberight.out{
--webkit-transform-origin:0 50%;
--webkit-animation-name:cubeRightOut
-}
+#jqt .cuberight.in{-webkit-transform-origin:100% 50%;-webkit-animation-name:cubeRightIn}
+#jqt .cuberight.out{-webkit-transform-origin:0 50%;-webkit-animation-name:cubeRightOut}
 @-webkit-keyframes cubeRightIn{
-0%{
-opacity:0
-}
-5%{
--webkit-transform:rotateY(-90deg) translateZ(360px);
-opacity:.5
-}
-95%{
--webkit-transform:rotateY(0deg) translateZ(0) translateX(0);
-opacity:1
-}
+0%{opacity:0}
+5%{-webkit-transform:rotateY(-90deg) translateZ(360px);opacity:.5}
+95%{-webkit-transform:rotateY(0deg) translateZ(0) translateX(0);opacity:1}
 }
 @-webkit-keyframes cubeRightOut{
-5%{
--webkit-transform:rotateY(0deg) translateZ(0) translateX(0);
-opacity:1
+5%{-webkit-transform:rotateY(0deg) translateZ(0) translateX(0);opacity:1}
+95%{-webkit-transform:rotateY(90deg) translateZ(360px);opacity:.5}
 }
-95%{
--webkit-transform:rotateY(90deg) translateZ(360px);
-opacity:.5
-}
-}
+/* Animation End.*/
 
-body{
-background:#000
-}
+body{background:#000}
 
-#jqt ul.edgetoedge,#jqt ul.metal,#jqt ul.plastic,.base-flatlists{
-margin:0;
-padding:0;
-border-width:0 0 0 1px;
--webkit-border-radius:0;
-border-radius:0
-}
-#jqt>*{
-background-color:#555658
-}
+#jqt ul.edgetoedge,#jqt ul.metal,#jqt ul.plastic,.base-flatlists{margin:0;padding:0;border-width:0 0 0 1px;-webkit-border-radius:0;border-radius:0}
+#jqt>*{background-color:#555658}
 
-#jqt .toolbar{
--webkit-box-sizing:border-box;
-box-sizing:border-box;
-border-bottom:1px solid #000;
-z-index:10;
-position:relative;
-padding:10px;
-height:44px;
-}
-#jqt .toolbar>h1{
-position:absolute;
-overflow:hidden;
-left:50%;
-bottom:9px;
-margin:1px 0 0 -75px;
-width:150px;
-font-size:20px;
-font-weight:700;
-line-height:1.3em;
-text-align:center;
-text-overflow:ellipsis;
-white-space:nowrap;
-color:#fff;
-text-shadow:#161717 0 -1px 0
-}
-#jqt.black-translucent .toolbar{
-padding-top:30px;
-height:64px
-}
-#jqt.landscape .toolbar>h1{
-margin-left:-125px;
-width:250px
-}
-#jqt .add,#jqt .back,#jqt .button,#jqt .cancel{
-position:absolute;
-overflow:hidden;
-width:auto;
-height:30px;
-font-family:inherit;
-font-size:12px;
-font-weight:700;
-line-height:30px;
-text-overflow:ellipsis;
-text-decoration:none;
-white-space:nowrap;
-background:0 0;
-bottom:6px;
-right:10px;
-margin:0;
-padding:0 10px;
-color:#e2e3e3;
-text-shadow:#000 0 -1px 0;
-border:1px solid #000;
--webkit-border-radius:4px;
-border-radius:4px;
-background-color:#0a0a0a;
-}
-#jqt .add.active,#jqt .back.active,#jqt .button.active,#jqt .cancel.active{
-border-color:#000;
-background-color:#000;
-color:#d8d9d9;
-text-shadow:#000 0 -1px 0
-}
-#jqt .back{
-max-width:60px;
-margin-left:15px;
-overflow:visible;
-padding-left:5px
-}
-#jqt .back,#jqt .cancel{
-left:10px;
-right:auto
-}
-#jqt .add{
-font-size:24px;
-line-height:24px;
-font-weight:700
-}
-#jqt ul{
-padding:0;
-margin:5px 10px 10px;
--webkit-margin-collapse:separate
-}
+#jqt .toolbar{-webkit-box-sizing:border-box;box-sizing:border-box;border-bottom:1px solid #000;z-index:10;position:relative;padding:10px;height:44px;}
+#jqt .toolbar>h1{position:absolute;overflow:hidden;left:50%;bottom:9px;margin:1px 0 0 -75px;width:150px;font-size:20px;font-weight:700;line-height:1.3em;text-align:center;text-overflow:ellipsis;white-space:nowrap;color:#fff;text-shadow:#161717 0 -1px 0}
+#jqt.black-translucent .toolbar{padding-top:30px;height:64px}
+#jqt.landscape .toolbar>h1{margin-left:-125px;width:250px}
+#jqt .add,#jqt .back,#jqt .button,#jqt .cancel{position:absolute;overflow:hidden;width:auto;height:30px;font-family:inherit;font-size:12px;font-weight:700;line-height:30px;text-overflow:ellipsis;text-decoration:none;white-space:nowrap;background:0 0;bottom:6px;right:10px;margin:0;padding:0 10px;color:#e2e3e3;text-shadow:#000 0 -1px 0;border:1px solid #000;-webkit-border-radius:4px;border-radius:4px;background-color:#0a0a0a;}
+#jqt .add.active,#jqt .back.active,#jqt .button.active,#jqt .cancel.active{border-color:#000;background-color:#000;color:#d8d9d9;text-shadow:#000 0 -1px 0}
+#jqt .back{max-width:60px;overflow:visible;}
+#jqt .back,#jqt .cancel{left:10px;right:auto}
+#jqt .add{font-size:24px;line-height:24px;font-weight:700}
 
-
-
-#jqt>*{
-}
-#jqt .toolbar{
-background-color:#2f3031;
-}
+#jqt .toolbar{background-color:#2f3031;}
 
