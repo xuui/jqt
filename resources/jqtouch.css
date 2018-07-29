@@ -22,20 +22,22 @@ body{-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}
 #jqt .scroll{-webkit-margin-collapse:separate}
 
 
-body{background:#000}
 
-#jqt ul.edgetoedge,#jqt ul.metal,#jqt ul.plastic,.base-flatlists{margin:0;padding:0;border-width:0 0 0 1px;-webkit-border-radius:0;border-radius:0}
-#jqt>*{background-color:#555658}
+#jqt .toolbar{-webkit-box-sizing:border-box;box-sizing:border-box;z-index:10;position:relative;padding:10px;height:44px;}
+#jqt .toolbar>h1{position:absolute;overflow:hidden;left:50%;bottom:9px;margin:1px 0 0 -75px;width:150px;font-size:20px;font-weight:700;line-height:1.3em;text-align:center;text-overflow:ellipsis;white-space:nowrap;}
 
-#jqt .toolbar{-webkit-box-sizing:border-box;box-sizing:border-box;border-bottom:1px solid #000;z-index:10;position:relative;padding:10px;height:44px;}
-#jqt .toolbar>h1{position:absolute;overflow:hidden;left:50%;bottom:9px;margin:1px 0 0 -75px;width:150px;font-size:20px;font-weight:700;line-height:1.3em;text-align:center;text-overflow:ellipsis;white-space:nowrap;color:#fff;text-shadow:#161717 0 -1px 0}
+
 #jqt.black-translucent .toolbar{padding-top:30px;height:64px}
 #jqt.landscape .toolbar>h1{margin-left:-125px;width:250px}
-#jqt .add,#jqt .back,#jqt .button,#jqt .cancel{position:absolute;overflow:hidden;width:auto;height:30px;font-family:inherit;font-size:12px;font-weight:700;line-height:30px;text-overflow:ellipsis;text-decoration:none;white-space:nowrap;background:0 0;bottom:6px;right:10px;margin:0;padding:0 10px;color:#e2e3e3;text-shadow:#000 0 -1px 0;border:1px solid #000;-webkit-border-radius:4px;border-radius:4px;background-color:#0a0a0a;}
-#jqt .add.active,#jqt .back.active,#jqt .button.active,#jqt .cancel.active{border-color:#000;background-color:#000;color:#d8d9d9;text-shadow:#000 0 -1px 0}
+#jqt .add,#jqt .back,#jqt .button,#jqt .cancel{position:absolute;overflow:hidden;width:auto;height:30px;font-family:inherit;font-size:12px;font-weight:700;line-height:30px;text-overflow:ellipsis;text-decoration:none;white-space:nowrap;background:0 0;bottom:6px;right:10px;margin:0;padding:0 10px;-webkit-border-radius:4px;border-radius:4px;}
 #jqt .back{max-width:60px;overflow:visible;}
 #jqt .back,#jqt .cancel{left:10px;right:auto}
 #jqt .add{font-size:24px;line-height:24px;font-weight:700}
 
-#jqt .toolbar{background-color:#2f3031;}
-
+/* UI Theme */
+body{background:#000}
+#jqt>*{background-color:#eee}
+#jqt .toolbar{background-color:#fff;border-bottom:1px solid #000;}
+#jqt .toolbar>h1{color:#333;text-shadow:#161717 0 -1px 0}
+#jqt .add,#jqt .back,#jqt .button,#jqt .cancel{background-color:#ccc;color:#333;text-shadow:#000 0 -1px 0;border:1px solid #aaa;}
+#jqt .add.active,#jqt .back.active,#jqt .button.active,#jqt .cancel.active{border-color:#000;background-color:#000;color:#d8d9d9;text-shadow:#000 0 -1px 0}
