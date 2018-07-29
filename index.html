@@ -3,89 +3,11 @@
     <head>
         <meta charset="UTF-8" />
         <title>jQTouch &beta;</title>
-        <link rel="stylesheet" href="../../themes/css/jqtouch.min.css" data-jqt-theme>
+        <link rel="stylesheet" href="jqtouch.min.css" data-jqt-theme>
 
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-        <!-- Either, (1) Zepto:  Un-comment these 2 lines (order matters)  -->
-        <script src="../../lib/zepto/zepto.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../../src/jqt.min.js" type="text/javascript" charset="utf-8"></script>
-        
-        <!-- Or,     (2) jQuery: Un-comment these 3 lines (order matters)  -->
-        <!-- <script src="../../lib/jquery/jquery-1.7.min.js" type="application/x-javascript" charset="utf-8"></script> -->
-        <!-- <script src="../../src/jqt.min.js" type="text/javascript" charset="utf-8"></script> -->
-        <!-- <script src="../../src/jqtouch-jquery.min.js" type="application/x-javascript" charset="utf-8"></script> -->
-
-        <script src="../../extensions/jqt.themeswitcher.min.js" type="application/x-javascript" charset="utf-8"></script>
-        <script src="../../extensions/jqt.actionsheet.min.js" type="application/x-javascript" charset="utf-8"></script>
-        <script src="../../extensions/jqt.menusheet.min.js" type="application/x-javascript" charset="utf-8"></script>
-
-        <script type="text/javascript" charset="utf-8">
-            var jQT = new $.jQT({
-                icon: 'jqtouch.png',
-                icon4: 'jqtouch4.png',
-                addGlossToIcon: false,
-                startupScreen: 'jqt_startup.png',
-                statusBar: 'black-translucent',
-                preloadImages: []
-            });
-
-            // Some sample Javascript functions:
-            $(function(){
-
-                // Show a swipe event on swipe test
-                $('#swipeme').swipe(function(evt, data) {
-                    var details = !data ? '': '<strong>' + data.direction + '/' + data.deltaX +':' + data.deltaY + '</strong>!';
-                    $(this).html('You swiped ' + details );
-                    $(this).parent().after('<li>swiped!</li>')
-                });
-
-                $('#tapme').tap(function(){
-                    $(this).parent().after('<li>tapped!</li>')
-                });
-
-                $('a[target="_blank"]').bind('click', function() {
-                    if (confirm('This link opens in a new window.')) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                });
-
-                // Page animation callback events
-                $('#pageevents').
-                    bind('pageAnimationStart', function(e, info){ 
-                        $(this).find('.info').append('Started animating ' + info.direction + '&hellip;  And the link ' +
-                            'had this custom data: ' + $(this).data('referrer').data('custom') + '<br>');
-                    }).
-                    bind('pageAnimationEnd', function(e, info){
-                        $(this).find('.info').append('Finished animating ' + info.direction + '.<br><br>');
-
-                    });
-                
-                // Page animations end with AJAX callback event, example 1 (load remote HTML only first time)
-                $('#callback').bind('pageAnimationEnd', function(e, info){
-
-                    // Make sure the data hasn't already been loaded (we'll set 'loaded' to true a couple lines further down)
-                    if (!$(this).data('loaded')) {
-                        
-                        // Append a placeholder in case the remote HTML takes its sweet time making it back
-                        // Then, overwrite the "Loading" placeholder text with the remote HTML
-                        $(this).append($('<div>Loading</div>').load('ajax.html .info', function() {        
-                            // Set the 'loaded' var to true so we know not to reload
-                            // the HTML next time the #callback div animation ends
-                            $(this).parent().data('loaded', true);  
-                        }));
-                    }
-                });
-                // Orientation callback event
-                $('#jqt').bind('turn', function(e, data){
-                    $('#orient').html('Orientation: ' + data.orientation);
-                });
-                
-            });
-        </script>
         <style type="text/css" media="screen">
             #jqt.fullscreen #home .info {
                 display: none;
@@ -446,6 +368,86 @@
             </form>
         </div>
     </body>
+        <!-- Either, (1) Zepto:  Un-comment these 2 lines (order matters)  -->
+        <!-- <script src="../../lib/zepto/zepto.min.js" type="text/javascript" charset="utf-8"></script> -->
+        <!-- <script src="../../src/jqt.min.js" type="text/javascript" charset="utf-8"></script> -->
+        
+        <!-- Or,     (2) jQuery: Un-comment these 3 lines (order matters)  -->
+        <script src="resources/js/jquery.slim.min.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="resources/jqt.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="resources/jqtouch-jquery.min.js" type="application/x-javascript" charset="utf-8"></script>
+
+        <script src="../../extensions/jqt.themeswitcher.min.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="../../extensions/jqt.actionsheet.min.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="../../extensions/jqt.menusheet.min.js" type="application/x-javascript" charset="utf-8"></script>
+
+        <script type="text/javascript" charset="utf-8">
+            var jQT = new $.jQT({
+                icon: 'jqtouch.png',
+                icon4: 'jqtouch4.png',
+                addGlossToIcon: false,
+                startupScreen: 'jqt_startup.png',
+                statusBar: 'black-translucent',
+                preloadImages: []
+            });
+
+            // Some sample Javascript functions:
+            $(function(){
+
+                // Show a swipe event on swipe test
+                $('#swipeme').swipe(function(evt, data) {
+                    var details = !data ? '': '<strong>' + data.direction + '/' + data.deltaX +':' + data.deltaY + '</strong>!';
+                    $(this).html('You swiped ' + details );
+                    $(this).parent().after('<li>swiped!</li>')
+                });
+
+                $('#tapme').tap(function(){
+                    $(this).parent().after('<li>tapped!</li>')
+                });
+
+                $('a[target="_blank"]').bind('click', function() {
+                    if (confirm('This link opens in a new window.')) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                });
+
+                // Page animation callback events
+                $('#pageevents').
+                    bind('pageAnimationStart', function(e, info){ 
+                        $(this).find('.info').append('Started animating ' + info.direction + '&hellip;  And the link ' +
+                            'had this custom data: ' + $(this).data('referrer').data('custom') + '<br>');
+                    }).
+                    bind('pageAnimationEnd', function(e, info){
+                        $(this).find('.info').append('Finished animating ' + info.direction + '.<br><br>');
+
+                    });
+                
+                // Page animations end with AJAX callback event, example 1 (load remote HTML only first time)
+                $('#callback').bind('pageAnimationEnd', function(e, info){
+
+                    // Make sure the data hasn't already been loaded (we'll set 'loaded' to true a couple lines further down)
+                    if (!$(this).data('loaded')) {
+                        
+                        // Append a placeholder in case the remote HTML takes its sweet time making it back
+                        // Then, overwrite the "Loading" placeholder text with the remote HTML
+                        $(this).append($('<div>Loading</div>').load('ajax.html .info', function() {        
+                            // Set the 'loaded' var to true so we know not to reload
+                            // the HTML next time the #callback div animation ends
+                            $(this).parent().data('loaded', true);  
+                        }));
+                    }
+                });
+                // Orientation callback event
+                $('#jqt').bind('turn', function(e, data){
+                    $('#orient').html('Orientation: ' + data.orientation);
+                });
+                
+            });
+        </script>
+    
+    
     <script>
       if (window.navigator.standalone) {
         $("meta[name='apple-mobile-web-app-status-bar-style']").remove();
