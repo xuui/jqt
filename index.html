@@ -1,134 +1,89 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>jQTouch &beta;</title>
+<head>
+<meta charset="UTF-8" />
+<title>Xu-jQTouch</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="stylesheet" href="resources/jqtouch.css" data-jqt-theme>
+</head>
 
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        
-        <link rel="stylesheet" href="resources/jqtouch.css" data-jqt-theme>
+<body>
+<div id="jqt" class="">
 
-    </head>
-    <body>
-        <div id="jqt" class="">
-            
-            <div id="home" class="current">
-                <div class="toolbar">
-                    <h1>jQTouch</h1>
-                    <a class="button slideup" id="infoButton" href="#about">About</a>
-                </div>
-                <div class="scroll">
-                    <h2>Most Popular</h2>
-                    <ul class="rounded">
-                        <li><a href="#animdemo">Slide</a></li>
-                        <li><a href="#animdemo" class="slideup">Slide Up</a></li>
-                        <li><a href="#animdemo" class="dissolve">Dissolve</a></li>
-                        <li><a href="#animdemo" class="pop">Pop</a></li>
-                    </ul>
-                    <h2>3d Transitions</h2>
-                    <ul class="rounded">
-                        <li><a href="#animdemo" class="flipright">Flip right</a></li>
-                        <li><a href="#animdemo" class="flipleft">Flip left</a></li>
-                        <li><a href="#animdemo" class="cube">Cube</a></li>
-                        <li><a href="#animdemo" class="swap">Swap</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div id="about" class="selectable">
-                <div class="toolbar">
-                    <h1>About...</h1>
-                    <a class="button slideup" id="infoButton" href="#about">About</a>
-                </div>
-                <p><strong>jQTouch</strong><br>Version 1.0 beta</p>
-                <p><a href="#" class="goback">Close</a></p>
-            </div>
-            <div id="animations">
-                <div class="toolbar">
-                    <h1>Animations</h1>
-                    <a class="back" href="#">Home</a>
-                </div>
-            </div>
-            <div id="animdemo">
-                <div class="scroll">
-                    <div style="font-size: 1.5em; text-align: center; margin: 160px 0 90px; font-family: Marker felt;">
-                        Pretty smooth, eh?
-                    </div>
-                    <a style="margin-bottom: 120px;color:rgba(0,0,0,.9)" href="#" class="whiteButton goback">Go back</a>
-                </div>
-            </div>
-            
-            <!-- -->
-            
-        </div>
-    </body>
-        <!-- Either, (1) Zepto:  Un-comment these 2 lines (order matters)  -->
-        <!-- <script src="../../lib/zepto/zepto.min.js" type="text/javascript" charset="utf-8"></script> -->
-        <!-- <script src="../../src/jqt.min.js" type="text/javascript" charset="utf-8"></script> -->
-        
-        <!-- Or,     (2) jQuery: Un-comment these 3 lines (order matters)  -->
-        <script src="resources/js/jquery.slim.min.js" type="application/x-javascript" charset="utf-8"></script>
-        <script src="resources/jqt.min.js" type="text/javascript" charset="utf-8"></script>
+  <div id="home" class="current">
+    <div class="toolbar">
+      <h1>jQTouch</h1>
+      <a class="button slideup" id="infoButton" href="#about">About</a>
+    </div>
+    <div class="scroll">
+      <h2>Most Popular</h2>
+      <ul class="rounded">
+        <li><a href="#animdemo">Slide</a></li>
+        <li><a href="#animdemo" class="slideup">Slide Up</a></li>
+        <li><a href="#animdemo" class="dissolve">Dissolve</a></li>
+        <li><a href="#animdemo" class="pop">Pop</a></li>
+      </ul>
+      <h2>3d Transitions</h2>
+      <ul class="rounded">
+        <li><a href="#animdemo" class="flipright">Flip right</a></li>
+        <li><a href="#animdemo" class="flipleft">Flip left</a></li>
+        <li><a href="#animdemo" class="cube">Cube</a></li>
+        <li><a href="#animdemo" class="swap">Swap</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- -->
+  
+  <div id="about" class="selectable">
+    <div class="toolbar">
+      <h1>About...</h1>
+      <a class="button slideup" id="infoButton" href="#about">About</a>
+    </div>
+    <div class="scroll">
+      <p><strong>jQTouch</strong><br>Version 1.0 beta</p>
+      <p><a href="#" class="goback">Close</a></p>
+    </div>
+  </div>
+  <!-- -->
+  
+  <div id="animations">
+    <div class="toolbar">
+      <h1>Animations</h1>
+      <a class="back" href="#">Home</a>
+    </div>
+  </div>
+  <!-- -->
+  
+  <div id="animdemo">
+    <div class="scroll">
+      <div style="font-size: 1.5em; text-align: center; margin: 160px 0 90px; font-family: Marker felt;">
+        Pretty smooth, eh?
+      </div>
+      <a style="margin-bottom: 120px;color:rgba(0,0,0,.9)" href="#" class="whiteButton goback">Go back</a>
+    </div>
+  </div>
+  <!-- -->
 
+</div>
+</body>
+<script src="resources/js/jquery.slim.min.js"></script>
+<script src="resources/jqt.min.js"></script>
+<script>
+var jQT=new $.jQT({
+  icon:'jqtouch.png',
+  icon4:'jqtouch4.png',
+  addGlossToIcon:false,
+  startupScreen:'jqt_startup.png',
+  statusBar:'black-translucent',
+  preloadImages:[]
+});
 
-        <script type="text/javascript" charset="utf-8">
-            var jQT = new $.jQT({
-                icon: 'jqtouch.png',
-                icon4: 'jqtouch4.png',
-                addGlossToIcon: false,
-                startupScreen: 'jqt_startup.png',
-                statusBar: 'black-translucent',
-                preloadImages: []
-            });
+// Some sample Javascript functions:
+$(function(){});
 
-            // Some sample Javascript functions:
-            $(function(){
-
-                // Show a swipe event on swipe test
-
-
-                $('a[target="_blank"]').bind('click', function() {
-                    if (confirm('This link opens in a new window.')) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                });
-
-                // Page animation callback events
-                $('#pageevents').
-                    bind('pageAnimationStart', function(e, info){ 
-                        $(this).find('.info').append('Started animating ' + info.direction + '&hellip;  And the link ' +
-                            'had this custom data: ' + $(this).data('referrer').data('custom') + '<br>');
-                    }).
-                    bind('pageAnimationEnd', function(e, info){
-                        $(this).find('.info').append('Finished animating ' + info.direction + '.<br><br>');
-
-                    });
-                
-                // Page animations end with AJAX callback event, example 1 (load remote HTML only first time)
-                $('#callback').bind('pageAnimationEnd', function(e, info){
-
-                    // Make sure the data hasn't already been loaded (we'll set 'loaded' to true a couple lines further down)
-                    if (!$(this).data('loaded')) {
-                        
-                        // Append a placeholder in case the remote HTML takes its sweet time making it back
-                        // Then, overwrite the "Loading" placeholder text with the remote HTML
-                        $(this).append($('<div>Loading</div>').load('ajax.html .info', function() {        
-                            // Set the 'loaded' var to true so we know not to reload
-                            // the HTML next time the #callback div animation ends
-                            $(this).parent().data('loaded', true);  
-                        }));
-                    }
-                });
-                
-            });
-        </script>
-    
-    
-    <script>
-      if (window.navigator.standalone) {
-        $("meta[name='apple-mobile-web-app-status-bar-style']").remove();
-      }
-    </script>
+if(window.navigator.standalone){
+  $("meta[name='apple-mobile-web-app-status-bar-style']").remove();
+}
+</script>
 </html>
