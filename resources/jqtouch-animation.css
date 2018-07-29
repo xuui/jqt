@@ -3,12 +3,12 @@
 */
 /* Animation */
 #jqt .in,#jqt .out{-webkit-animation-duration:375ms;-webkit-animation-fill-mode:both;-webkit-animation-timing-function:ease-in-out}
-#jqt .in:after,#jqt .out:after{content:"";position:absolute;display:block;top:0;left:0;bottom:0;right:0}
+#jqt .in:after,#jqt .out:after{content:'';position:absolute;display:block;top:0;left:0;bottom:0;right:0}
 #jqt .in a,#jqt .in input,#jqt .out a,#jqt .out input{pointer-events:none}
 #jqt .in{z-index:10}
 #jqt .out{z-index:0!important}
-#jqt.supports3d{-webkit-perspective:1000}
-#jqt.supports3d>[data-ui=view]{-webkit-transform:translate3d(0,0,0) rotate(0) scale(1)}
+#jqt{-webkit-perspective:1000}
+#jqt>[data-ui=view]{-webkit-transform:translate3d(0,0,0) rotate(0) scale(1)}
 #jqt .fade.in{-webkit-animation-name:fadeIn}
 #jqt .fade.out{z-index:10;-webkit-animation-name:fadeOut}
 @-webkit-keyframes fadeIn{
