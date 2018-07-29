@@ -81,21 +81,14 @@
     jQT.prototype.tapHandlers = [];
 
     jQT.prototype.defaults = {
-      addGlossToIcon: true,
       backSelector: ".back, .cancel, .goback",
       cacheGetRequests: true,
       defaultAnimation: "slideleft",
       fixedViewport: true,
       formSelector: "form",
-      fullScreen: true,
-      fullScreenClass: "fullscreen",
-      icon: null,
-      icon4: null,
       minimalUIViewport: true,
       preloadImages: false,
       starter: $(document).ready,
-      startupScreen: null,
-      statusBar: "default",
       submitSelector: ".submit",
       touchSelector: "a, .touch",
       updateHash: true,
@@ -308,32 +301,6 @@
             (new Image()).src = _this.settings.preloadImages[i];
           }
           hairExtensions = [];
-          precomposed = _this.settings.addGlossToIcon ? '' : '-precomposed';
-          if (_this.settings.icon) {
-            hairExtensions.push("<link rel=\"apple-touch-icon" + precomposed + "\" href=\"" + _this.settings.icon + "\">");
-          }
-          if (_this.settings.icon4) {
-            hairExtensions.push("<link rel=\"apple-touch-icon" + precomposed + "\" sizes=\"114x114\" href=\"" + _this.settings.icon4 + "\">");
-          }
-          if (_this.settings.startupScreen) {
-            hairExtensions.push("<link rel=\"apple-touch-startup-image\" href=\"" + _this.settings.startupScreen + "\">");
-          }
-          viewports = [];
-          if (_this.settings.fixedViewport) {
-            viewports.push("initial-scale=1.0", "maximum-scale=1.0", "user-scalable=0");
-          }
-          if (_this.settings.minimalUIViewport) {
-            viewports.push("minimal-ui");
-          }
-          if (viewports) {
-            hairExtensions.push("<meta name=\"viewport\" content=\"" + (viewports.join(', ')) + "\">");
-          }
-          if (_this.settings.fullScreen) {
-            hairExtensions.push("<meta name=\"apple-mobile-web-app-capable\" content=\"yes\" />");
-            if (_this.settings.statusBar) {
-              hairExtensions.push("<meta name=\"apple-mobile-web-app-status-bar-style\" content=\"" + _this.settings.statusBar + "\">");
-            }
-          }
           if (hairExtensions.length) {
             return $head.prepend(hairExtensions.join(''));
           }
@@ -517,9 +484,6 @@
             anatomyLessons.push("supports3d");
           }
           anatomyLessons.push(_this.settings.useTouchScroll ? 'touchscroll' : 'autoscroll');
-          if (_this.settings.fullScreenClass && window.navigator.standalone) {
-            anatomyLessons.push(_this.settings.fullScreenClass, _this.settings.statusBar);
-          }
           $body.addClass(anatomyLessons.join(" ")).on("click", clickHandler).on("orientationchange", orientationChangeHandler).on("submit", submitHandler).on("tap", tapHandler).on((support.touch ? "touchstart" : "mousedown"), touchStartHandler).trigger("orientationchange");
           if (_this.settings.updateHash) {
             $(window).on("hashchange", hashChangeHandler);

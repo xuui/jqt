@@ -2,9 +2,12 @@
 <html>
 <head>
 <meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,minimal-ui">
 <title>Xu-jQTouch</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  
 <link rel="stylesheet" href="resources/jqtouch.css" data-jqt-theme>
 </head>
 
@@ -38,7 +41,7 @@
   <div data-ui="view" id="about" class="selectable">
     <div class="toolbar">
       <h1>About...</h1>
-      <a class="button slideup" href="#home">Back</a>
+      <a class="button slidedown" href="#home">Back</a>
     </div>
     <div class="scroll">
       <p><strong>jQTouch</strong><br>Version 1.0 beta</p>
@@ -67,11 +70,6 @@
 <script src="resources/jqt.js"></script>
 <script>
 var jQT=new $.jQT({
-  icon:'jqtouch.png',
-  icon4:'jqtouch4.png',
-  addGlossToIcon:false,
-  startupScreen:'jqt_startup.png',
-  statusBar:'black-translucent',
   preloadImages:[]
 });
 
