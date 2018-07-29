@@ -4,7 +4,7 @@
 /* Animation */
 #jqt{-webkit-perspective:1000;perspective:1000;}
 #jqt>[data-ui=view]{-webkit-transform:translate3d(0,0,0) rotate(0) scale(1);transform:translate3d(0,0,0) rotate(0) scale(1);}
-#jqt .in,#jqt .out{-webkit-animation-duration:.26s;animation-duration:.26s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;}
+#jqt .in,#jqt .out{-webkit-animation-duration:.28s;animation-duration:.28s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;}
 #jqt .in:after,#jqt .out:after{content:'';position:absolute;display:block;top:0;left:0;bottom:0;right:0}
 #jqt .in a,#jqt .in input,#jqt .out a,#jqt .out input{pointer-events:none}
 #jqt .in{z-index:10;}
@@ -36,7 +36,7 @@
 #jqt .swapleft{-webkit-animation-duration:.4s;-webkit-transform:perspective(800);-webkit-animation-timing-function:ease-out}
 #jqt .swapleft.in{-webkit-animation-name:swapLeftIn}
 #jqt .swapleft.out{-webkit-animation-name:swapLeftOut}
-#jqt .cubeleft.in,#jqt .cubeleft.out,#jqt .cuberight.in,#jqt .cuberight.out{-webkit-animation-duration:.3s;-webkit-transform:perspective(800)}
+#jqt .cubeleft.in,#jqt .cubeleft.out,#jqt .cuberight.in,#jqt .cuberight.out{-webkit-animation-duration:.34s;-webkit-transform:perspective(800)}
 #jqt .cubeleft.in{-webkit-transform-origin:0 50%;-webkit-animation-name:cubeLeftIn}
 #jqt .cubeleft.out{-webkit-transform-origin:100% 50%;-webkit-animation-name:cubeLeftOut}
 #jqt .cuberight.in{-webkit-transform-origin:100% 50%;-webkit-animation-name:cubeRightIn}
