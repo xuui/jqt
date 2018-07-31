@@ -6,8 +6,8 @@ jQTouch may be freely distributed under the MIT license.
 /*! normalize.css 2011-07-12T10:51 UTC · http://github.com/necolas/normalize.css */
 @import url(jqtouch-animation.css);
 
-*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
-*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+*{-webkit-box-sizing:border-box;box-sizing:border-box;}
+*:before,*:after{-webkit-box-sizing:border-box;box-sizing:border-box;}
 *{margin:0;padding:0}
 
 body{-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}
